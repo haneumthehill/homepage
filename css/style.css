@@ -1,0 +1,4600 @@
+/* ===================================
+   한음 더힐(The Hill) - Style Sheet
+   Premium Real Estate Landing Page
+   =================================== */
+
+/* ----- Pretendard Font (CDN) ----- */
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-display: swap;
+}
+
+/* ----- CSS Variables ----- */
+:root {
+    /* Colors */
+    --color-black: #0a0a0a;
+    --color-dark: #1a1a1a;
+    --color-gray-900: #2a2a2a;
+    --color-gray-800: #3a3a3a;
+    --color-gray-700: #555555;
+    --color-gray-600: #777777;
+    --color-gray-500: #999999;
+    --color-gray-400: #bbbbbb;
+    --color-gray-300: #dddddd;
+    --color-gray-200: #eeeeee;
+    --color-gray-100: #f5f5f5;
+    --color-white: #ffffff;
+    
+    /* Accent - 한음 로고 색상에 맞춤 */
+    --color-accent: #c9a227;
+    --color-accent-dark: #a88b1a;
+    
+    /* NEW Tag Color */
+    --color-new: #FF7A00;
+    --color-new-dark: #E56D00;
+    
+    /* Typography - Pretendard 사용 */
+    --font-primary: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-heading: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-weight-light: 300;
+    --font-weight-regular: 300;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 500;
+    --font-weight-bold: 700;
+    
+    /* Spacing */
+    --space-xs: 0.25rem;
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+    --space-2xl: 3rem;
+    --space-3xl: 4rem;
+    --space-4xl: 6rem;
+    --space-5xl: 8rem;
+    
+    /* Container */
+    --container-max: 1280px;
+    --container-padding: 1.5rem;
+    
+    /* Header */
+    --header-height: 80px;
+    --header-height-mobile: 64px;
+    
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-base: 0.3s ease;
+    --transition-slow: 0.5s ease;
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+    --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* ----- Reset & Base ----- */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ===================================
+   반응형 타이포그래피 (Mobile First)
+   - 모바일: 0 ~ 767px (기본값)
+   - 태블릿: 768px ~ 1023px
+   - 데스크탑: 1024px 이상
+   =================================== */
+
+/* ----- 모바일 기본 (0 ~ 767px) ----- */
+body {
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.6;
+    color: #333;
+    background-color: var(--color-white);
+    overflow-x: hidden;
+}
+
+h1 {
+    font-size: 26px;
+    line-height: 1.3;
+}
+
+h2 {
+    font-size: 22px;
+    line-height: 1.4;
+}
+
+h3 {
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+h4 {
+    font-size: 18px;
+    line-height: 1.4;
+}
+
+h5 {
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+h6 {
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+nav a,
+.nav-link,
+.mobile-nav-link,
+.menu-item,
+.category-title {
+    font-size: 14px;
+}
+
+/* ----- 태블릿 (min-width: 768px) ----- */
+@media (min-width: 768px) {
+    body {
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+    h1 {
+        font-size: 32px;
+        line-height: 1.3;
+    }
+
+    h2 {
+        font-size: 26px;
+        line-height: 1.35;
+    }
+
+    h3 {
+        font-size: 22px;
+        line-height: 1.4;
+    }
+
+    h4 {
+        font-size: 20px;
+        line-height: 1.4;
+    }
+
+    h5 {
+        font-size: 18px;
+        line-height: 1.4;
+    }
+
+    h6 {
+        font-size: 16px;
+        line-height: 1.4;
+    }
+
+    nav a,
+    .nav-link,
+    .mobile-nav-link,
+    .menu-item,
+    .category-title {
+        font-size: 15px;
+    }
+}
+
+/* ----- 데스크탑 (min-width: 1024px) ----- */
+@media (min-width: 1024px) {
+    body {
+        font-size: 17px;
+        line-height: 1.8;
+    }
+
+    h1 {
+        font-size: 38px;
+        line-height: 1.25;
+    }
+
+    h2 {
+        font-size: 30px;
+        line-height: 1.3;
+    }
+
+    h3 {
+        font-size: 24px;
+        line-height: 1.35;
+    }
+
+    h4 {
+        font-size: 22px;
+        line-height: 1.35;
+    }
+
+    h5 {
+        font-size: 20px;
+        line-height: 1.4;
+    }
+
+    h6 {
+        font-size: 18px;
+        line-height: 1.4;
+    }
+
+    nav a,
+    .nav-link,
+    .mobile-nav-link,
+    .menu-item,
+    .category-title {
+        font-size: 16px;
+    }
+}
+
+/* ----- Heading Font (Pretendard Bold) ----- */
+h1, h2, h3, h4, h5, h6,
+.logo-text,
+.nav-link,
+.mobile-nav-link,
+.menu-item,
+.section-title,
+.section-label,
+.category-title,
+.header-title,
+.hero-title,
+.title-main,
+.title-en,
+.hero-badge,
+.btn,
+.info-title,
+.infra-title,
+.history-subtitle,
+.land-info-title,
+.news-title,
+.greeting-intro,
+.label-new,
+.nav-new-badge {
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 700;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+ul, ol {
+    list-style: none;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+/* ----- Layout ----- */
+.container {
+    width: 100%;
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+}
+
+.section {
+    padding: var(--space-5xl) 0;
+}
+
+@media (max-width: 768px) {
+    .section {
+        padding: var(--space-4xl) 0;
+    }
+    
+    /* 모바일 가독성 향상 */
+    body {
+        font-size: 15px;
+    }
+    
+    p {
+        font-size: 15px;
+        line-height: 1.75;
+    }
+}
+
+/* ----- Header ----- */
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    height: var(--header-height);
+    transition: all var(--transition-base);
+}
+
+.site-header.scrolled {
+    background-color: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-md);
+}
+
+.site-header.scrolled .logo-text,
+.site-header.scrolled .logo-sub,
+.site-header.scrolled .nav-link,
+.site-header.scrolled .login-btn {
+    color: var(--color-dark);
+}
+
+.site-header.scrolled .hamburger span {
+    background-color: var(--color-dark);
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+}
+
+.logo-text {
+    font-family: 'Do Hyeon', sans-serif;
+    font-size: 20px;
+    color: var(--color-white);
+    letter-spacing: 0;
+    transition: color var(--transition-base);
+}
+
+.logo-sub {
+    font-family: 'Do Hyeon', sans-serif;
+    font-size: 10px;
+    color: var(--color-white);
+    letter-spacing: 0.15em;
+    opacity: 0.8;
+    transition: color var(--transition-base);
+}
+
+/* Logo 반응형 */
+@media (min-width: 768px) {
+    .logo-text {
+        font-size: 22px;
+    }
+    
+    .logo-sub {
+        font-size: 10px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .logo-text {
+        font-size: 24px;
+    }
+    
+    .logo-sub {
+        font-size: 11px;
+    }
+}
+
+/* Navigation - PC에서 표시, 모바일/태블릿에서 숨김 */
+.main-nav {
+    display: block;
+}
+
+@media (max-width: 1023px) {
+    .main-nav {
+        display: none;
+    }
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xl);
+}
+
+.nav-link {
+    position: relative;
+    font-family: 'Do Hyeon', sans-serif;
+    font-size: 1rem;
+    color: var(--color-white);
+    padding: var(--space-sm) var(--space-md);
+    transition: color var(--transition-base);
+    white-space: nowrap;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: var(--space-md);
+    right: var(--space-md);
+    width: auto;
+    height: 2px;
+    background-color: var(--color-accent);
+    transform: scaleX(0);
+    transition: transform var(--transition-base);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    transform: scaleX(1);
+}
+
+/* NEW Badge in Navigation */
+.nav-link-new {
+    position: relative;
+}
+
+.nav-new-badge {
+    position: absolute;
+    top: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: inline-block;
+    font-family: 'Do Hyeon', sans-serif;
+    font-size: 10px;
+    color: #FF7A00;
+    background: none;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.mobile-nav-link-new {
+    position: relative;
+    display: inline-block;
+}
+
+.mobile-nav-link-new .nav-new-badge {
+    position: absolute;
+    top: -8px;
+    left: 0;
+    transform: none;
+    font-size: 11px;
+}
+
+/* NEW Label in Section */
+.label-new {
+    display: inline-block;
+    font-family: 'Do Hyeon', sans-serif;
+    font-size: 12px;
+    color: #FF7A00;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-bottom: 4px;
+    background: none;
+}
+
+/* Header Actions */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+}
+
+.login-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    color: var(--color-white);
+    transition: color var(--transition-base);
+}
+
+.login-btn:hover {
+    color: var(--color-accent);
+}
+
+/* Mobile Menu Button - PC에서 숨김, 모바일/태블릿에서 표시 */
+.mobile-menu-btn {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+}
+
+@media (max-width: 1023px) {
+    .mobile-menu-btn {
+        display: flex;
+    }
+}
+
+.hamburger {
+    position: relative;
+    width: 24px;
+    height: 16px;
+}
+
+.hamburger span {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-white);
+    transition: all var(--transition-base);
+}
+
+.hamburger span:nth-child(1) { top: 0; }
+.hamburger span:nth-child(2) { top: 50%; transform: translateY(-50%); }
+.hamburger span:nth-child(3) { bottom: 0; }
+
+.mobile-menu-btn.active .hamburger span:nth-child(1) {
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+}
+
+.mobile-menu-btn.active .hamburger span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-btn.active .hamburger span:nth-child(3) {
+    bottom: 50%;
+    transform: translateY(50%) rotate(-45deg);
+}
+
+/* Mobile Navigation - 오른쪽에서 왼쪽으로 슬라이드 */
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 80%;
+    max-width: 320px;
+    height: 100vh;
+    background-color: var(--color-white);
+    padding: var(--space-3xl) var(--space-xl);
+    padding-top: calc(var(--header-height) + var(--space-xl));
+    transform: translateX(100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-base);
+    box-shadow: -5px 0 20px rgba(0, 0, 0, 0.15);
+    z-index: 999;
+    overflow-y: auto;
+}
+
+@media (max-width: 768px) {
+    .mobile-nav {
+        padding-top: calc(var(--header-height-mobile) + var(--space-xl));
+    }
+}
+
+.mobile-nav.active {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+/* 모바일 메뉴 오버레이 */
+.mobile-nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-base);
+    z-index: 998;
+}
+
+.mobile-nav-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.mobile-nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.mobile-nav-link {
+    font-family: 'Pretendard', sans-serif;
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: var(--color-dark);
+    padding: var(--space-md) 0;
+    border-bottom: 1px solid var(--color-gray-200);
+    transition: color var(--transition-fast);
+}
+
+.mobile-nav-link:hover {
+    color: var(--color-accent);
+}
+
+/* ----- Hero Section ----- */
+.hero {
+    position: relative;
+    height: 100vh;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.4) 0%,
+        rgba(0, 0, 0, 0.3) 50%,
+        rgba(0, 0, 0, 0.5) 100%
+    );
+}
+
+.hero-content {
+    text-align: center;
+    color: var(--color-white);
+    padding: 0 var(--container-padding);
+    max-width: 1000px;
+}
+
+.hero-badge {
+    display: inline-block;
+    font-family: 'Do Hyeon', sans-serif;
+    font-size: 0.875rem;
+    letter-spacing: 0.15em;
+    padding: var(--space-sm) var(--space-lg);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    margin-bottom: var(--space-xl);
+}
+
+.hero-title {
+    margin-bottom: var(--space-lg);
+}
+
+.title-main {
+    display: block;
+    font-family: 'Do Hyeon', sans-serif;
+    font-size: 32px;
+    letter-spacing: 0;
+    line-height: 1.2;
+    margin-bottom: var(--space-sm);
+}
+
+.title-en {
+    display: block;
+    font-family: 'Do Hyeon', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.2em;
+    opacity: 0.7;
+}
+
+.hero-subtitle {
+    font-size: 16px;
+    letter-spacing: 0.05em;
+    margin-bottom: var(--space-2xl);
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+/* Hero 반응형 타이포그래피 */
+@media (min-width: 768px) {
+    .title-main {
+        font-size: 48px;
+    }
+    
+    .title-en {
+        font-size: 15px;
+    }
+    
+    .hero-subtitle {
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .title-main {
+        font-size: 64px;
+    }
+    
+    .title-en {
+        font-size: 16px;
+    }
+    
+    .hero-subtitle {
+        font-size: 22px;
+    }
+}
+
+.hero-cta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-md);
+}
+
+/* Hero Scroll Indicator */
+.hero-scroll {
+    position: absolute;
+    bottom: var(--space-2xl);
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-sm);
+    color: var(--color-white);
+    opacity: 0.7;
+}
+
+.scroll-text {
+    font-size: 0.625rem;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: 0.2em;
+}
+
+.scroll-line {
+    width: 1px;
+    height: 60px;
+    background: linear-gradient(
+        to bottom,
+        var(--color-white) 0%,
+        transparent 100%
+    );
+    animation: scrollPulse 2s ease-in-out infinite;
+}
+
+@keyframes scrollPulse {
+    0%, 100% { opacity: 0.3; transform: scaleY(0.5); }
+    50% { opacity: 1; transform: scaleY(1); }
+}
+
+/* ----- Buttons ----- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    padding: 0.75rem 1.5rem;
+    font-family: 'Do Hyeon', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0;
+    border-radius: 0;
+    transition: all var(--transition-base);
+}
+
+/* Button 반응형 */
+@media (min-width: 768px) {
+    .btn {
+        padding: 0.875rem 2rem;
+        font-size: 15px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .btn {
+        font-size: 16px;
+    }
+}
+
+.btn-primary {
+    background-color: var(--color-dark);
+    color: var(--color-white);
+    border: 2px solid var(--color-dark);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+    color: var(--color-white);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(201, 169, 98, 0.3);
+}
+
+.btn-outline {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--color-white);
+    border: 2px solid var(--color-white);
+    backdrop-filter: blur(4px);
+}
+
+.btn-outline:hover {
+    background-color: var(--color-white);
+    color: var(--color-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+}
+
+.btn-outline-dark {
+    background-color: transparent;
+    color: var(--color-dark);
+    border: 2px solid var(--color-dark);
+}
+
+.btn-outline-dark:hover {
+    background-color: var(--color-dark);
+    color: var(--color-white);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-dark {
+    background-color: var(--color-dark);
+    color: var(--color-white);
+}
+
+.btn-dark:hover {
+    background-color: var(--color-black);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-white {
+    background-color: var(--color-white);
+    color: var(--color-dark);
+}
+
+.btn-white:hover {
+    background-color: var(--color-accent);
+    color: var(--color-white);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(201, 169, 98, 0.3);
+}
+
+.btn-outline-white {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--color-white);
+    border: 2px solid var(--color-white);
+    backdrop-filter: blur(4px);
+}
+
+.btn-outline-white:hover {
+    background-color: var(--color-white);
+    color: var(--color-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+}
+
+.btn-lg {
+    padding: 1.125rem 2.5rem;
+    font-size: 1rem;
+}
+
+/* ----- Section Headers ----- */
+.section-header {
+    text-align: center;
+    margin-bottom: var(--space-4xl);
+}
+
+.section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    font-family: 'Do Hyeon', sans-serif;
+    font-size: 0.875rem;
+    letter-spacing: 0.15em;
+    color: var(--color-accent);
+    margin-bottom: var(--space-md);
+}
+
+.section-title {
+    font-family: 'Do Hyeon', sans-serif;
+    font-size: 24px;
+    letter-spacing: 0;
+    color: var(--color-dark);
+    margin-bottom: var(--space-md);
+}
+
+/* Section Title 반응형 */
+@media (min-width: 768px) {
+    .section-title {
+        font-size: 28px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .section-title {
+        font-size: 32px;
+    }
+}
+
+.section-subtitle {
+    font-size: 1rem;
+    color: var(--color-gray-600);
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+/* ----- About Section (한음 더힐 안내) ----- */
+.about {
+    background-color: var(--color-white);
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-3xl);
+    margin-bottom: var(--space-4xl);
+}
+
+@media (min-width: 992px) {
+    .about-content {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-4xl);
+        align-items: center;
+    }
+}
+
+.about-text {
+    order: 2;
+}
+
+@media (min-width: 992px) {
+    .about-text {
+        order: 1;
+    }
+}
+
+.about-text p {
+    margin-bottom: var(--space-lg);
+    color: var(--color-gray-700);
+    line-height: 1.9;
+    font-size: 1rem;
+}
+
+.about-text p:first-child {
+    font-size: 1.125rem;
+    font-weight: var(--font-weight-medium);
+    color: var(--color-dark);
+}
+
+.about-image {
+    order: 1;
+}
+
+@media (min-width: 992px) {
+    .about-image {
+        order: 2;
+    }
+}
+
+.image-wrapper {
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.image-wrapper img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+}
+
+.image-wrapper:hover img {
+    transform: scale(1.03);
+}
+
+/* Infra Grid */
+.infra-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: var(--space-xl);
+}
+
+@media (min-width: 576px) {
+    .infra-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 992px) {
+    .infra-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.infra-card {
+    background-color: var(--color-gray-100);
+    padding: var(--space-2xl);
+    text-align: center;
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.infra-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.infra-icon {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto var(--space-lg);
+    color: var(--color-accent);
+}
+
+.infra-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.infra-title {
+    font-family: 'Pretendard', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-dark);
+    margin-bottom: var(--space-lg);
+}
+
+.infra-list {
+    text-align: left;
+}
+
+.infra-list li {
+    position: relative;
+    font-size: 0.875rem;
+    color: var(--color-gray-700);
+    padding-left: var(--space-md);
+    margin-bottom: var(--space-sm);
+    line-height: 1.6;
+}
+
+.infra-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.5em;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: var(--color-accent);
+}
+
+/* ----- History Section (사업이력) ----- */
+.history {
+    background-color: var(--color-gray-100);
+}
+
+/* Greeting Box */
+.greeting-box {
+    background-color: var(--color-white);
+    padding: var(--space-3xl);
+    margin-bottom: var(--space-4xl);
+    border-left: 4px solid var(--color-accent);
+}
+
+@media (max-width: 768px) {
+    .greeting-box {
+        padding: var(--space-2xl) var(--space-xl);
+    }
+}
+
+.greeting-content p {
+    margin-bottom: var(--space-lg);
+    color: var(--color-gray-700);
+    line-height: 1.9;
+    font-size: 1rem;
+}
+
+.greeting-intro {
+    font-family: 'Do Hyeon', sans-serif;
+    font-size: 1.5rem !important;
+    color: var(--color-dark) !important;
+    margin-bottom: var(--space-xl) !important;
+}
+
+.greeting-thanks {
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-dark) !important;
+    margin-top: var(--space-xl);
+}
+
+/* History Section */
+.history-section {
+    background-color: var(--color-white);
+    padding: var(--space-3xl);
+    margin-bottom: var(--space-3xl);
+}
+
+@media (max-width: 768px) {
+    .history-section {
+        padding: var(--space-2xl) var(--space-xl);
+    }
+}
+
+.history-subtitle {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    font-family: 'Do Hyeon', sans-serif;
+    font-size: 1.5rem;
+    color: var(--color-dark);
+    margin-bottom: var(--space-2xl);
+    padding-bottom: var(--space-md);
+    border-bottom: 2px solid var(--color-gray-200);
+}
+
+.subtitle-icon {
+    font-size: 1.5rem;
+}
+
+/* History List */
+.history-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+}
+
+@media (min-width: 768px) {
+    .history-list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-md) var(--space-2xl);
+    }
+}
+
+.history-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-md);
+    padding: var(--space-md) 0;
+    border-bottom: 1px solid var(--color-gray-200);
+}
+
+.history-date {
+    flex-shrink: 0;
+    font-size: 0.875rem;
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-accent);
+    min-width: 70px;
+}
+
+.history-name {
+    font-size: 0.9375rem;
+    color: var(--color-gray-700);
+    line-height: 1.5;
+}
+
+/* History Item Animation */
+.history-item {
+    animation: historyFadeIn 0.5s ease forwards;
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+@keyframes historyFadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* History Loading State */
+.history-loading {
+    text-align: center;
+    padding: var(--space-3xl);
+    color: var(--color-gray-500);
+    font-size: 0.9375rem;
+}
+
+.history-loading::after {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-left: 8px;
+    border: 2px solid var(--color-gray-300);
+    border-top-color: var(--color-accent);
+    border-radius: 50%;
+    animation: loadingSpin 0.8s linear infinite;
+    vertical-align: middle;
+}
+
+@keyframes loadingSpin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.history-empty {
+    text-align: center;
+    padding: var(--space-3xl);
+    color: var(--color-gray-500);
+}
+
+/* History Gallery */
+.history-gallery {
+    background-color: var(--color-white);
+    padding: var(--space-3xl);
+}
+
+@media (max-width: 768px) {
+    .history-gallery {
+        padding: var(--space-2xl) var(--space-xl);
+    }
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+}
+
+@media (min-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--space-lg);
+    }
+}
+
+.gallery-item {
+    overflow: hidden;
+    border-radius: 4px;
+    background-color: var(--color-gray-200);
+}
+
+.gallery-item img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+/* ----- Land Sale Section (토지분양) ----- */
+.land-sale {
+    background-color: var(--color-white);
+}
+
+.land-sale-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-3xl);
+}
+
+@media (min-width: 992px) {
+    .land-sale-content {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-4xl);
+    }
+}
+
+.land-info-card {
+    background-color: var(--color-gray-100);
+    padding: var(--space-2xl);
+}
+
+.land-info-title {
+    font-family: 'Do Hyeon', sans-serif;
+    font-size: 1.5rem;
+    color: var(--color-dark);
+    margin-bottom: var(--space-xl);
+    padding-bottom: var(--space-md);
+    border-bottom: 2px solid var(--color-accent);
+}
+
+.land-info-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.land-info-table tr {
+    border-bottom: 1px solid var(--color-gray-300);
+}
+
+.land-info-table th,
+.land-info-table td {
+    padding: var(--space-md);
+    text-align: left;
+    font-size: 0.9375rem;
+    line-height: 1.5;
+}
+
+.land-info-table th {
+    width: 100px;
+    font-weight: var(--font-weight-medium);
+    color: var(--color-gray-600);
+    background-color: rgba(0,0,0,0.02);
+}
+
+.land-info-table td {
+    color: var(--color-dark);
+}
+
+@media (max-width: 576px) {
+    .land-info-table th,
+    .land-info-table td {
+        padding: var(--space-sm);
+        font-size: 0.875rem;
+    }
+    
+    .land-info-table th {
+        width: 80px;
+    }
+}
+
+.land-visual {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+}
+
+.land-image {
+    overflow: hidden;
+    border-radius: 4px;
+    background-color: var(--color-gray-200);
+}
+
+.land-image img {
+    width: 100%;
+    aspect-ratio: 16/10;
+    object-fit: cover;
+}
+
+.land-highlights {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-md);
+}
+
+.land-highlight-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: var(--space-lg);
+    background-color: var(--color-gray-100);
+    border-radius: 4px;
+}
+
+.highlight-icon {
+    font-size: 1.5rem;
+    margin-bottom: var(--space-sm);
+}
+
+.highlight-text {
+    font-size: 0.8125rem;
+    font-weight: var(--font-weight-medium);
+    color: var(--color-dark);
+    line-height: 1.4;
+}
+
+@media (max-width: 576px) {
+    .land-highlights {
+        grid-template-columns: 1fr;
+    }
+    
+    .land-highlight-item {
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: var(--space-md);
+        text-align: left;
+    }
+    
+    .highlight-icon {
+        margin-bottom: 0;
+    }
+}
+
+.land-cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+}
+
+@media (max-width: 576px) {
+    .land-cta {
+        flex-direction: column;
+    }
+    
+    .land-cta .btn {
+        width: 100%;
+    }
+}
+
+/* ----- News Section (호재뉴스) ----- */
+.news {
+    background-color: var(--color-gray-100);
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+}
+
+@media (min-width: 768px) {
+    .news-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 992px) {
+    .news-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .news-main {
+        grid-column: span 2;
+    }
+}
+
+.news-card {
+    background-color: var(--color-white);
+    padding: var(--space-2xl);
+    transition: transform var(--transition-base);
+}
+
+.news-card:hover {
+    transform: translateY(-3px);
+}
+
+.news-main {
+    background-color: var(--color-dark);
+    color: var(--color-white);
+}
+
+.news-badge {
+    display: inline-block;
+    font-size: 0.6875rem;
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: 0.05em;
+    padding: var(--space-xs) var(--space-sm);
+    background-color: var(--color-accent);
+    color: var(--color-white);
+    margin-bottom: var(--space-md);
+    border-radius: 2px;
+}
+
+.news-title {
+    font-family: 'Do Hyeon', sans-serif;
+    font-size: 1.25rem;
+    margin-bottom: var(--space-md);
+    line-height: 1.4;
+}
+
+.news-main .news-title {
+    font-size: 1.75rem;
+}
+
+.news-desc {
+    font-size: 0.9375rem;
+    color: var(--color-gray-600);
+    line-height: 1.7;
+    margin-bottom: var(--space-md);
+}
+
+.news-main .news-desc {
+    color: var(--color-gray-400);
+}
+
+.news-date {
+    font-size: 0.8125rem;
+    color: var(--color-gray-500);
+}
+
+.news-main .news-date {
+    color: var(--color-gray-500);
+}
+
+/* ----- Location Section (오시는길) ----- */
+.location {
+    background-color: var(--color-white);
+}
+
+.location-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-2xl);
+}
+
+@media (min-width: 992px) {
+    .location-content {
+        grid-template-columns: 2fr 1fr;
+        gap: var(--space-3xl);
+    }
+}
+
+.map-container {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background-color: var(--color-gray-200);
+    overflow: hidden;
+}
+
+@media (min-width: 992px) {
+    .map-container {
+        height: 500px;
+    }
+}
+
+.map-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.location-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+/* Info card 스타일은 아래 Info Card 섹션에서 정의 */
+
+.info-directions strong {
+    display: block;
+    font-weight: var(--font-weight-medium);
+    color: var(--color-dark);
+    margin-bottom: var(--space-xs);
+}
+
+/* ----- CTA Section ----- */
+.cta {
+    position: relative;
+    padding: var(--space-5xl) 0;
+    text-align: center;
+    color: var(--color-white);
+    overflow: hidden;
+}
+
+.cta-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.cta-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cta-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.cta-content {
+    position: relative;
+    z-index: 1;
+}
+
+.cta-title {
+    font-family: 'Do Hyeon', sans-serif;
+    font-size: 24px;
+    margin-bottom: var(--space-md);
+}
+
+/* CTA Title 반응형 */
+@media (min-width: 768px) {
+    .cta-title {
+        font-size: 28px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .cta-title {
+        font-size: 32px;
+    }
+}
+
+.cta-subtitle {
+    font-size: 1rem;
+    opacity: 0.8;
+    margin-bottom: var(--space-2xl);
+    line-height: 1.6;
+}
+
+.cta-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-md);
+}
+
+/* ----- Footer ----- */
+.site-footer {
+    background-color: var(--color-dark);
+    color: var(--color-white);
+    padding-top: var(--space-2xl);
+}
+
+@media (min-width: 768px) {
+    .site-footer {
+        padding-top: var(--space-4xl);
+    }
+}
+
+.footer-inner {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+}
+
+.footer-top {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+    padding-bottom: var(--space-lg);
+    border-bottom: 1px solid var(--color-gray-800);
+}
+
+@media (min-width: 768px) {
+    .footer-top {
+        grid-template-columns: 1fr 2fr;
+        gap: var(--space-3xl);
+        padding-bottom: var(--space-3xl);
+    }
+}
+
+.footer-brand {
+    margin-bottom: var(--space-md);
+}
+
+@media (min-width: 768px) {
+    .footer-brand {
+        margin-bottom: var(--space-xl);
+    }
+}
+
+.footer-logo {
+    margin-bottom: var(--space-sm);
+}
+
+@media (min-width: 768px) {
+    .footer-logo {
+        margin-bottom: var(--space-md);
+    }
+}
+
+.footer-logo .logo-text {
+    font-family: 'Pretendard', sans-serif;
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--color-white);
+}
+
+@media (min-width: 768px) {
+    .footer-logo .logo-text {
+        font-size: 1.5rem;
+    }
+}
+
+.footer-logo .logo-sub {
+    font-family: 'Pretendard', sans-serif;
+    font-size: 0.5rem;
+    font-weight: 300;
+    color: var(--color-gray-500);
+    letter-spacing: 0.1em;
+}
+
+@media (min-width: 768px) {
+    .footer-logo .logo-sub {
+        font-size: 0.625rem;
+    }
+}
+
+.footer-tagline {
+    font-size: 0.6875rem;
+    color: var(--color-gray-500);
+    line-height: 1.4;
+}
+
+@media (min-width: 768px) {
+    .footer-tagline {
+        font-size: 0.875rem;
+        line-height: 1.5;
+    }
+}
+
+.footer-links {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: var(--space-2xl);
+}
+
+@media (min-width: 576px) {
+    .footer-links {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.footer-col h4 {
+    font-family: 'Pretendard', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: var(--space-lg);
+}
+
+.footer-col ul li {
+    font-size: 0.875rem;
+    color: var(--color-gray-500);
+    margin-bottom: var(--space-sm);
+    line-height: 1.5;
+}
+
+.footer-col ul li a:hover {
+    color: var(--color-accent);
+}
+
+.tel-link {
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-white) !important;
+}
+
+.footer-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+    padding: var(--space-2xl) 0;
+    border-bottom: 1px solid var(--color-gray-800);
+}
+
+@media (min-width: 768px) {
+    .footer-bottom {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+}
+
+.footer-info p {
+    font-size: 0.8125rem;
+    color: var(--color-gray-500);
+    margin-bottom: var(--space-xs);
+    line-height: 1.5;
+}
+
+.footer-legal {
+    display: flex;
+    gap: var(--space-lg);
+}
+
+.footer-legal a {
+    font-size: 0.8125rem;
+    color: var(--color-gray-500);
+}
+
+.footer-legal a:hover {
+    color: var(--color-white);
+}
+
+.footer-copyright {
+    padding: var(--space-xl) 0;
+    text-align: center;
+}
+
+.footer-copyright p {
+    font-size: 0.75rem;
+    color: var(--color-gray-600);
+    margin-bottom: var(--space-sm);
+}
+
+.disclaimer {
+    font-size: 0.5rem;
+    color: var(--color-gray-700);
+    line-height: 1.4;
+}
+
+@media (min-width: 768px) {
+    .disclaimer {
+        font-size: 0.6875rem;
+        line-height: 1.5;
+    }
+}
+
+/* ----- Animations ----- */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Staggered animation delays */
+.fade-in:nth-child(1) { transition-delay: 0s; }
+.fade-in:nth-child(2) { transition-delay: 0.1s; }
+.fade-in:nth-child(3) { transition-delay: 0.2s; }
+.fade-in:nth-child(4) { transition-delay: 0.3s; }
+
+/* ----- Lazy Loading ----- */
+.lazy {
+    opacity: 0;
+    transition: opacity var(--transition-slow);
+}
+
+.lazy.loaded {
+    opacity: 1;
+}
+
+/* ----- Utilities ----- */
+.mobile-br {
+    display: none;
+}
+
+@media (max-width: 576px) {
+    .mobile-br {
+        display: block;
+    }
+}
+
+/* ----- Responsive Adjustments ----- */
+@media (max-width: 768px) {
+    :root {
+        --container-padding: 1rem;
+    }
+    
+    .site-header {
+        height: var(--header-height-mobile);
+    }
+    
+    .mobile-nav {
+        top: var(--header-height-mobile);
+    }
+}
+
+/* ----- Placeholder Images ----- */
+.hero-image,
+.about-image img,
+.land-image img,
+.gallery-item img,
+.cta-bg img {
+    background: linear-gradient(135deg, var(--color-gray-300) 0%, var(--color-gray-200) 100%);
+}
+
+/* ----- Responsive Image Container ----- */
+.responsive-img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+}
+
+/* ===================================
+   Multi-Page Specific Styles
+   =================================== */
+
+/* ----- Logo Image ----- */
+.logo-img {
+    flex-shrink: 0;
+    width: auto;
+    height: 44px;
+    object-fit: contain;
+    transition: opacity var(--transition-base);
+}
+
+@media (max-width: 768px) {
+    .logo-img {
+        height: 36px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-img {
+        height: 32px;
+    }
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+}
+
+.logo-text-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+/* logo-text-wrap은 항상 표시 */
+
+/* ----- Header Tel ----- */
+.header-tel {
+    display: none;
+    align-items: center;
+    gap: var(--space-sm);
+    color: var(--color-white);
+    font-size: 0.875rem;
+    font-weight: var(--font-weight-medium);
+    transition: color var(--transition-base);
+}
+
+@media (min-width: 768px) {
+    .header-tel {
+        display: flex;
+    }
+}
+
+.site-header.scrolled .header-tel {
+    color: var(--color-dark);
+}
+
+.header-tel:hover {
+    color: var(--color-accent);
+}
+
+.header-tel-text {
+    display: none;
+}
+
+@media (min-width: 1024px) {
+    .header-tel-text {
+        display: inline;
+    }
+}
+
+/* ----- Mobile Nav Contact ----- */
+.mobile-nav-contact {
+    margin-top: var(--space-xl);
+    padding-top: var(--space-xl);
+    border-top: 1px solid var(--color-gray-200);
+}
+
+.mobile-tel-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    width: 100%;
+    padding: var(--space-md) var(--space-lg);
+    background-color: var(--color-dark);
+    color: var(--color-white);
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: var(--font-weight-medium);
+    border-radius: 4px;
+    transition: background-color var(--transition-base);
+}
+
+.mobile-tel-btn:hover {
+    background-color: var(--color-accent);
+}
+
+/* ----- Page Hero ----- */
+.page-hero {
+    position: relative;
+    height: 50vh;
+    min-height: 350px;
+    max-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: var(--header-height);
+}
+
+@media (max-width: 768px) {
+    .page-hero {
+        margin-top: var(--header-height-mobile);
+        min-height: 280px;
+    }
+}
+
+.page-hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.page-hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.page-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.5) 0%,
+        rgba(0, 0, 0, 0.4) 100%
+    );
+}
+
+.page-hero-content {
+    text-align: center;
+    color: var(--color-white);
+}
+
+.page-hero-badge {
+    display: inline-block;
+    padding: var(--space-xs) var(--space-md);
+    background-color: var(--color-new);
+    color: var(--color-white);
+    font-size: 0.75rem;
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: 0.05em;
+    border-radius: 2px;
+    margin-bottom: var(--space-md);
+}
+
+.page-hero-label {
+    display: block;
+    font-size: 0.875rem;
+    letter-spacing: 0.15em;
+    opacity: 0.8;
+    margin-bottom: var(--space-sm);
+}
+
+.page-hero-title {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 2.5rem;
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--space-md);
+}
+
+@media (min-width: 768px) {
+    .page-hero-title {
+        font-size: 3rem;
+    }
+}
+
+.page-hero-desc {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+/* ----- Quick Links Section ----- */
+.quick-links {
+    background-color: var(--color-gray-100);
+}
+
+.quick-links-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+}
+
+@media (min-width: 576px) {
+    .quick-links-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 992px) {
+    .quick-links-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.quick-link-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: var(--space-2xl);
+    background-color: var(--color-white);
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.quick-link-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+.quick-link-highlight {
+    background-color: var(--color-dark);
+    color: var(--color-white);
+}
+
+.quick-link-highlight .quick-link-desc {
+    color: var(--color-gray-400);
+}
+
+.quick-link-badge {
+    position: absolute;
+    top: var(--space-md);
+    right: var(--space-md);
+    padding: var(--space-xs) var(--space-sm);
+    background-color: var(--color-new);
+    color: var(--color-white);
+    font-size: 0.6875rem;
+    font-weight: var(--font-weight-semibold);
+    border-radius: 2px;
+}
+
+.quick-link-icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: var(--space-lg);
+    color: var(--color-accent);
+}
+
+.quick-link-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.quick-link-highlight .quick-link-icon {
+    color: var(--color-accent);
+}
+
+.quick-link-title {
+    font-family: 'Pretendard', sans-serif;
+    font-size: 1.25rem;
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: var(--space-sm);
+}
+
+.quick-link-desc {
+    font-size: 0.875rem;
+    color: var(--color-gray-600);
+    line-height: 1.5;
+    margin-bottom: var(--space-lg);
+    flex-grow: 1;
+}
+
+.quick-link-arrow {
+    font-size: 1.25rem;
+    color: var(--color-accent);
+}
+
+/* ----- Infra Section ----- */
+.infra-section {
+    background-color: var(--color-white);
+}
+
+/* ----- Greeting Section ----- */
+.greeting-section {
+    background-color: var(--color-white);
+}
+
+.greeting-box {
+    background-color: var(--color-gray-100);
+    padding: var(--space-3xl);
+    border-left: 4px solid var(--color-accent);
+}
+
+@media (max-width: 768px) {
+    .greeting-box {
+        padding: var(--space-2xl) var(--space-xl);
+    }
+}
+
+.greeting-header {
+    margin-bottom: var(--space-2xl);
+}
+
+.greeting-label {
+    display: block;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    color: var(--color-accent);
+    margin-bottom: var(--space-sm);
+}
+
+.greeting-title {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 1.75rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-dark);
+}
+
+/* ----- History List Section ----- */
+.history-list-section {
+    background-color: var(--color-gray-100);
+}
+
+.history-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-2xl);
+}
+
+.filter-btn {
+    padding: var(--space-sm) var(--space-lg);
+    font-size: 0.875rem;
+    color: var(--color-gray-600);
+    background-color: var(--color-white);
+    border: 1px solid var(--color-gray-300);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background-color: var(--color-dark);
+    color: var(--color-white);
+    border-color: var(--color-dark);
+}
+
+/* ----- Gallery Section ----- */
+.gallery-section {
+    background-color: var(--color-white);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+}
+
+@media (min-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--space-lg);
+    }
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    background-color: var(--color-gray-200);
+}
+
+.gallery-item img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+.gallery-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: var(--space-md);
+    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+    opacity: 0;
+    transition: opacity var(--transition-base);
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+.gallery-caption {
+    color: var(--color-white);
+    font-size: 0.875rem;
+}
+
+.gallery-notice {
+    text-align: center;
+    margin-top: var(--space-2xl);
+    font-size: 0.875rem;
+    color: var(--color-gray-500);
+}
+
+/* ----- Company Section ----- */
+.company-section {
+    background-color: var(--color-gray-100);
+}
+
+.company-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+}
+
+@media (min-width: 768px) {
+    .company-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.company-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: var(--space-2xl);
+    background-color: var(--color-white);
+    border-radius: 4px;
+}
+
+.company-icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: var(--space-lg);
+    color: var(--color-accent);
+}
+
+.company-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.company-title {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 1.125rem;
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-dark);
+    margin-bottom: var(--space-sm);
+}
+
+.company-desc {
+    font-size: 0.875rem;
+    color: var(--color-gray-600);
+}
+
+/* ----- Land Page Styles ----- */
+.land-overview {
+    background-color: var(--color-white);
+}
+
+.land-overview-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-2xl);
+}
+
+@media (min-width: 992px) {
+    .land-overview-content {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.land-info-card {
+    background-color: var(--color-gray-100);
+    padding: var(--space-2xl);
+    border-radius: 4px;
+}
+
+.land-info-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.land-info-table tr {
+    border-bottom: 1px solid var(--color-gray-300);
+}
+
+.land-info-table th,
+.land-info-table td {
+    padding: var(--space-md);
+    text-align: left;
+    font-size: 0.9375rem;
+    line-height: 1.5;
+}
+
+.land-info-table th {
+    width: 100px;
+    font-weight: var(--font-weight-medium);
+    color: var(--color-gray-600);
+    background-color: rgba(0,0,0,0.02);
+}
+
+.land-info-table td {
+    color: var(--color-dark);
+}
+
+.land-highlights-card {
+    background-color: var(--color-gray-100);
+    padding: var(--space-2xl);
+    border-radius: 4px;
+    color: var(--color-dark);
+}
+
+.land-highlights-title {
+    font-family: 'Pretendard', sans-serif;
+    font-size: 1.25rem;
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: var(--space-xl);
+    padding-bottom: var(--space-md);
+    border-bottom: 1px solid var(--color-gray-300);
+}
+
+.land-highlights-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+}
+
+.land-highlight-item {
+    display: flex;
+    gap: var(--space-md);
+}
+
+.highlight-number {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-accent);
+    color: var(--color-white);
+    font-size: 0.75rem;
+    font-weight: var(--font-weight-bold);
+    border-radius: 50%;
+}
+
+.highlight-content h4 {
+    font-size: 1rem;
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-dark);
+    margin-bottom: var(--space-xs);
+}
+
+.highlight-content p {
+    font-size: 0.875rem;
+    color: var(--color-gray-600);
+    line-height: 1.5;
+}
+
+/* ----- Land Map Section ----- */
+.land-map-section {
+    background-color: var(--color-gray-100);
+}
+
+.land-map-wrapper {
+    background-color: var(--color-white);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.land-map-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+    padding: var(--space-3xl);
+    background-color: var(--color-gray-100);
+    border: 2px dashed var(--color-gray-300);
+    border-radius: 4px;
+}
+
+.placeholder-icon {
+    width: 80px;
+    height: 80px;
+    color: var(--color-gray-400);
+    margin-bottom: var(--space-xl);
+}
+
+.placeholder-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.placeholder-text {
+    font-size: 1.125rem;
+    font-weight: var(--font-weight-medium);
+    color: var(--color-gray-600);
+    margin-bottom: var(--space-sm);
+}
+
+.placeholder-sub {
+    font-size: 0.875rem;
+    color: var(--color-gray-500);
+}
+
+/* ----- Land Details Section ----- */
+.land-details-section {
+    background-color: var(--color-white);
+}
+
+.land-details-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+}
+
+@media (min-width: 768px) {
+    .land-details-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.land-detail-card {
+    padding: var(--space-2xl);
+    background-color: var(--color-gray-100);
+    border-radius: 4px;
+    text-align: center;
+}
+
+.detail-icon {
+    width: 56px;
+    height: 56px;
+    margin: 0 auto var(--space-lg);
+    color: var(--color-accent);
+}
+
+.detail-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.detail-title {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 1.125rem;
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-dark);
+    margin-bottom: var(--space-md);
+}
+
+.detail-desc {
+    font-size: 0.9375rem;
+    color: var(--color-gray-700);
+    line-height: 1.6;
+    margin-bottom: var(--space-md);
+}
+
+.detail-note {
+    font-size: 0.8125rem;
+    color: var(--color-gray-500);
+}
+
+/* ----- Land Gallery Section ----- */
+.land-gallery-section {
+    background-color: var(--color-gray-100);
+}
+
+.land-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+}
+
+@media (min-width: 768px) {
+    .land-gallery-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.land-gallery-item {
+    aspect-ratio: 4/3;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.gallery-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-gray-200);
+    color: var(--color-gray-500);
+}
+
+.gallery-placeholder span {
+    font-size: 0.875rem;
+    font-weight: var(--font-weight-medium);
+}
+
+.gallery-placeholder p {
+    font-size: 0.75rem;
+    margin-top: var(--space-xs);
+}
+
+/* ----- Land Location Section ----- */
+.land-location-section {
+    background-color: var(--color-white);
+}
+
+.location-benefits-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+}
+
+@media (min-width: 576px) {
+    .location-benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 992px) {
+    .location-benefits-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.location-benefit-card {
+    padding: var(--space-2xl);
+    background-color: var(--color-gray-100);
+    border-radius: 4px;
+    text-align: center;
+}
+
+.benefit-icon {
+    font-size: 2.5rem;
+    margin-bottom: var(--space-md);
+}
+
+.location-benefit-card h3 {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 1.125rem;
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-dark);
+    margin-bottom: var(--space-md);
+}
+
+.location-benefit-card ul {
+    text-align: left;
+}
+
+.location-benefit-card li {
+    position: relative;
+    padding-left: var(--space-md);
+    font-size: 0.875rem;
+    color: var(--color-gray-700);
+    margin-bottom: var(--space-sm);
+    line-height: 1.5;
+}
+
+.location-benefit-card li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.5em;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: var(--color-accent);
+}
+
+/* ----- Land CTA Section ----- */
+.land-cta-section {
+    background-color: var(--color-gray-100);
+}
+
+.land-cta-box {
+    background-color: var(--color-white);
+    padding: var(--space-4xl);
+    border-radius: 4px;
+    text-align: center;
+    box-shadow: var(--shadow-lg);
+}
+
+@media (max-width: 768px) {
+    .land-cta-box {
+        padding: var(--space-2xl);
+    }
+}
+
+.land-cta-title {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 1.75rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-dark);
+    margin-bottom: var(--space-md);
+}
+
+.land-cta-desc {
+    font-size: 1rem;
+    color: var(--color-gray-600);
+    line-height: 1.6;
+    margin-bottom: var(--space-2xl);
+}
+
+.land-cta-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-lg);
+    margin-bottom: var(--space-2xl);
+}
+
+@media (min-width: 768px) {
+    .land-cta-contact {
+        flex-direction: row;
+        justify-content: center;
+    }
+}
+
+.contact-info {
+    text-align: center;
+}
+
+.contact-label {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--color-gray-500);
+    margin-bottom: var(--space-xs);
+}
+
+.contact-number {
+    font-size: 1.5rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-dark);
+}
+
+.contact-time {
+    font-size: 1rem;
+    color: var(--color-dark);
+}
+
+.contact-divider {
+    display: none;
+    width: 1px;
+    height: 40px;
+    background-color: var(--color-gray-300);
+}
+
+@media (min-width: 768px) {
+    .contact-divider {
+        display: block;
+    }
+}
+
+.land-cta-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+@media (min-width: 576px) {
+    .land-cta-buttons {
+        flex-direction: row;
+        justify-content: center;
+    }
+}
+
+/* ----- News Page Styles ----- */
+.news-overview-section {
+    background-color: var(--color-white);
+}
+
+.news-overview-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-3xl);
+}
+
+@media (min-width: 992px) {
+    .news-overview-content {
+        grid-template-columns: 2fr 1fr;
+        align-items: start;
+    }
+}
+
+.overview-text {
+    line-height: 1.9;
+}
+
+.overview-lead {
+    font-size: 1.25rem;
+    font-weight: var(--font-weight-medium);
+    color: var(--color-dark);
+    margin-bottom: var(--space-xl);
+}
+
+.overview-text p {
+    margin-bottom: var(--space-lg);
+    color: var(--color-gray-700);
+}
+
+.overview-text strong {
+    color: var(--color-dark);
+    font-weight: var(--font-weight-semibold);
+}
+
+.overview-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-md);
+}
+
+@media (min-width: 992px) {
+    .overview-stats {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+    }
+}
+
+.stat-item {
+    padding: var(--space-xl);
+    background-color: var(--color-gray-100);
+    border-radius: 4px;
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-accent);
+    margin-bottom: var(--space-xs);
+}
+
+@media (min-width: 768px) {
+    .stat-number {
+        font-size: 2rem;
+    }
+}
+
+.stat-label {
+    font-size: 0.75rem;
+    color: var(--color-gray-600);
+}
+
+@media (min-width: 768px) {
+    .stat-label {
+        font-size: 0.875rem;
+    }
+}
+
+/* ----- Transport Section ----- */
+.news-transport-section {
+    background-color: var(--color-gray-100);
+}
+
+.transport-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+}
+
+@media (min-width: 576px) {
+    .transport-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 992px) {
+    .transport-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.transport-card {
+    padding: var(--space-2xl);
+    background-color: var(--color-white);
+    border-radius: 4px;
+}
+
+.transport-icon {
+    font-size: 2rem;
+    margin-bottom: var(--space-md);
+}
+
+.transport-title {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 1.125rem;
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-dark);
+    margin-bottom: var(--space-sm);
+}
+
+.transport-desc {
+    font-size: 0.875rem;
+    color: var(--color-gray-600);
+    line-height: 1.6;
+    margin-bottom: var(--space-md);
+}
+
+.transport-tag {
+    display: inline-block;
+    padding: var(--space-xs) var(--space-sm);
+    background-color: var(--color-accent);
+    color: var(--color-white);
+    font-size: 0.6875rem;
+    font-weight: var(--font-weight-semibold);
+    border-radius: 2px;
+}
+
+/* ----- Infra Content Section ----- */
+.news-infra-section {
+    background-color: var(--color-white);
+}
+
+.infra-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-2xl);
+}
+
+@media (min-width: 768px) {
+    .infra-content {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.infra-category {
+    padding: var(--space-2xl);
+    background-color: var(--color-gray-100);
+    border-radius: 4px;
+}
+
+.infra-category-title {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 1.125rem;
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-dark);
+    margin-bottom: var(--space-xl);
+    padding-bottom: var(--space-md);
+    border-bottom: 1px solid var(--color-gray-300);
+}
+
+.category-icon {
+    font-size: 1.25rem;
+}
+
+.infra-items {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.infra-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-sm) 0;
+    border-bottom: 1px solid var(--color-gray-200);
+}
+
+.infra-name {
+    font-size: 0.9375rem;
+    color: var(--color-dark);
+}
+
+.infra-info {
+    font-size: 0.8125rem;
+    color: var(--color-gray-500);
+}
+
+/* ----- Development Section ----- */
+.news-development-section {
+    background-color: var(--color-gray-100);
+}
+
+.development-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+}
+
+@media (min-width: 768px) {
+    .development-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .development-main {
+        grid-column: span 2;
+    }
+}
+
+.development-card {
+    padding: var(--space-2xl);
+    background-color: var(--color-white);
+    border-radius: 4px;
+}
+
+.development-main {
+    background-color: var(--color-dark);
+    color: var(--color-white);
+}
+
+.development-badge {
+    display: inline-block;
+    padding: var(--space-xs) var(--space-sm);
+    background-color: var(--color-accent);
+    color: var(--color-white);
+    font-size: 0.6875rem;
+    font-weight: var(--font-weight-semibold);
+    border-radius: 2px;
+    margin-bottom: var(--space-md);
+}
+
+.development-title {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 1.25rem;
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: var(--space-md);
+}
+
+.development-main .development-title {
+    font-size: 1.5rem;
+}
+
+.development-desc {
+    font-size: 0.9375rem;
+    color: var(--color-gray-600);
+    line-height: 1.7;
+    margin-bottom: var(--space-md);
+}
+
+.development-main .development-desc {
+    color: var(--color-gray-400);
+}
+
+.development-date {
+    font-size: 0.8125rem;
+    color: var(--color-gray-500);
+}
+
+.development-main .development-date {
+    color: var(--color-gray-500);
+}
+
+/* ----- Value Section ----- */
+.news-value-section {
+    background-color: var(--color-white);
+}
+
+.value-box {
+    background-color: var(--color-dark);
+    padding: var(--space-4xl);
+    border-radius: 4px;
+    color: var(--color-white);
+}
+
+@media (max-width: 768px) {
+    .value-box {
+        padding: var(--space-2xl);
+    }
+}
+
+.value-title {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 1.75rem;
+    font-weight: var(--font-weight-bold);
+    text-align: center;
+    margin-bottom: var(--space-3xl);
+}
+
+.value-points {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-2xl);
+}
+
+@media (min-width: 768px) {
+    .value-points {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.value-point {
+    display: flex;
+    gap: var(--space-lg);
+}
+
+.value-number {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-accent);
+    color: var(--color-white);
+    font-size: 0.875rem;
+    font-weight: var(--font-weight-bold);
+    border-radius: 50%;
+}
+
+.value-text h3 {
+    font-size: 1.125rem;
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: var(--space-sm);
+}
+
+.value-text p {
+    font-size: 0.9375rem;
+    color: var(--color-gray-400);
+    line-height: 1.6;
+}
+
+/* ----- Location Page Styles ----- */
+.location-map-section {
+    background-color: var(--color-white);
+}
+
+.location-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-2xl);
+}
+
+@media (min-width: 992px) {
+    .location-content {
+        grid-template-columns: 2fr 1fr;
+    }
+}
+
+.location-map {
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.map-container {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background-color: var(--color-gray-200);
+}
+
+@media (min-width: 992px) {
+    .map-container {
+        height: 500px;
+    }
+}
+
+.map-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* location-info 스타일은 아래에서 정의됨 */
+
+/* ----- Directions Section ----- */
+.directions-section {
+    background-color: var(--color-gray-100);
+}
+
+.directions-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-2xl);
+}
+
+@media (min-width: 768px) {
+    .directions-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.direction-card {
+    padding: var(--space-2xl);
+    background-color: var(--color-white);
+    border-radius: 4px;
+}
+
+.direction-icon {
+    width: 56px;
+    height: 56px;
+    color: var(--color-accent);
+    margin-bottom: var(--space-lg);
+}
+
+.direction-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.direction-title {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 1.25rem;
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-dark);
+    margin-bottom: var(--space-xl);
+}
+
+.direction-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+}
+
+.direction-item {
+    padding-bottom: var(--space-md);
+    border-bottom: 1px solid var(--color-gray-200);
+}
+
+.direction-label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-dark);
+    margin-bottom: var(--space-xs);
+}
+
+.direction-item p {
+    font-size: 0.875rem;
+    color: var(--color-gray-600);
+    line-height: 1.5;
+}
+
+/* ----- Business Section ----- */
+.business-section {
+    background-color: var(--color-white);
+}
+
+.business-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+}
+
+@media (min-width: 768px) {
+    .business-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.business-card {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-lg);
+    padding: var(--space-2xl);
+    background-color: var(--color-gray-100);
+    border-radius: 4px;
+}
+
+.business-icon {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    color: var(--color-accent);
+}
+
+.business-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.business-name {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 1rem;
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-dark);
+    margin-bottom: var(--space-xs);
+}
+
+.business-info {
+    font-size: 0.875rem;
+    color: var(--color-gray-600);
+}
+
+/* ----- Contact CTA Section ----- */
+.contact-cta-section {
+    background-color: var(--color-gray-100);
+}
+
+.contact-cta-box {
+    background-color: var(--color-white);
+    padding: var(--space-4xl);
+    border-radius: 4px;
+    text-align: center;
+    box-shadow: var(--shadow-lg);
+}
+
+@media (max-width: 768px) {
+    .contact-cta-box {
+        padding: var(--space-2xl);
+    }
+}
+
+.contact-cta-title {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 1.75rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-dark);
+    margin-bottom: var(--space-md);
+}
+
+.contact-cta-desc {
+    font-size: 1rem;
+    color: var(--color-gray-600);
+    line-height: 1.6;
+    margin-bottom: var(--space-2xl);
+}
+
+.contact-cta-phone {
+    margin-bottom: var(--space-2xl);
+}
+
+.phone-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-lg) var(--space-2xl);
+    background-color: var(--color-gray-100);
+    border-radius: 4px;
+    transition: background-color var(--transition-base);
+}
+
+.phone-link:hover {
+    background-color: var(--color-gray-200);
+}
+
+.phone-link svg {
+    color: var(--color-accent);
+}
+
+.phone-number {
+    font-size: 1.75rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-dark);
+}
+
+.contact-cta-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+@media (min-width: 576px) {
+    .contact-cta-buttons {
+        flex-direction: row;
+        justify-content: center;
+    }
+}
+
+/* ----- Footer Updates ----- */
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-md);
+}
+
+.footer-logo-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.footer-logo-kr {
+    font-family: 'Pretendard', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--color-white);
+    letter-spacing: 0.02em;
+}
+
+.footer-logo-en {
+    font-family: 'Pretendard', sans-serif;
+    font-size: 0.5rem;
+    font-weight: 300;
+    color: var(--color-gray-400);
+    letter-spacing: 0.1em;
+}
+
+@media (min-width: 768px) {
+    .footer-logo-kr {
+        font-size: 1.25rem;
+    }
+    
+    .footer-logo-en {
+        font-size: 0.75rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .footer-logo-kr {
+        font-size: 1.5rem;
+    }
+    
+    .footer-logo-en {
+        font-size: 0.8125rem;
+    }
+}
+
+.footer-company {
+    margin-bottom: var(--space-xs);
+}
+
+@media (min-width: 768px) {
+    .footer-company {
+        margin-bottom: var(--space-lg);
+    }
+}
+
+.footer-company:last-child {
+    margin-bottom: 0;
+}
+
+.footer-company p {
+    font-size: 0.5625rem;
+    color: var(--color-gray-500);
+    line-height: 1.3;
+    display: inline;
+}
+
+@media (min-width: 768px) {
+    .footer-company p {
+        font-size: 0.8125rem;
+        line-height: 1.5;
+        display: block;
+    }
+}
+
+.footer-company strong {
+    color: var(--color-gray-400);
+    font-weight: var(--font-weight-medium);
+}
+
+/* ----- Active Page Styles ----- */
+body[data-page="history"] .nav-link[data-page="history"],
+body[data-page="land"] .nav-link[data-page="land"],
+body[data-page="news"] .nav-link[data-page="news"],
+body[data-page="location"] .nav-link[data-page="location"],
+body[data-page="history"] .mobile-nav-link[data-page="history"],
+body[data-page="land"] .mobile-nav-link[data-page="land"],
+body[data-page="news"] .mobile-nav-link[data-page="news"],
+body[data-page="location"] .mobile-nav-link[data-page="location"] {
+    color: var(--color-accent);
+}
+
+body[data-page="history"] .nav-link[data-page="history"]::after,
+body[data-page="land"] .nav-link[data-page="land"]::after,
+body[data-page="news"] .nav-link[data-page="news"]::after,
+body[data-page="location"] .nav-link[data-page="location"]::after {
+    transform: scaleX(1);
+}
+
+/* Sub-page header always has background */
+body[data-page="history"] .site-header,
+body[data-page="land"] .site-header,
+body[data-page="news"] .site-header,
+body[data-page="location"] .site-header {
+    background-color: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-md);
+}
+
+body[data-page="history"] .logo-text,
+body[data-page="history"] .logo-sub,
+body[data-page="history"] .nav-link,
+body[data-page="history"] .header-tel,
+body[data-page="land"] .logo-text,
+body[data-page="land"] .logo-sub,
+body[data-page="land"] .nav-link,
+body[data-page="land"] .header-tel,
+body[data-page="news"] .logo-text,
+body[data-page="news"] .logo-sub,
+body[data-page="news"] .nav-link,
+body[data-page="news"] .header-tel,
+body[data-page="location"] .logo-text,
+body[data-page="location"] .logo-sub,
+body[data-page="location"] .nav-link,
+body[data-page="location"] .header-tel {
+    color: var(--color-dark);
+}
+
+body[data-page="history"] .hamburger span,
+body[data-page="land"] .hamburger span,
+body[data-page="news"] .hamburger span,
+body[data-page="location"] .hamburger span {
+    background-color: var(--color-dark);
+}
+
+/* Image placeholder overlay text */
+.image-placeholder-text {
+    position: absolute;
+    bottom: var(--space-md);
+    left: var(--space-md);
+    padding: var(--space-xs) var(--space-sm);
+    background-color: rgba(0, 0, 0, 0.6);
+    color: var(--color-white);
+    font-size: 0.75rem;
+    border-radius: 2px;
+}
+
+.image-wrapper {
+    position: relative;
+}
+
+/* About lead text */
+.about-lead {
+    font-size: 1.125rem;
+    font-weight: var(--font-weight-medium);
+    color: var(--color-dark);
+    margin-bottom: var(--space-xl);
+}
+
+/* ===================================
+   Gallery Swiper Slider
+   =================================== */
+.gallery-slider-wrapper {
+    position: relative;
+    padding: 0 var(--space-md);
+}
+
+@media (min-width: 768px) {
+    .gallery-slider-wrapper {
+        padding: 0;
+    }
+}
+
+.gallery-swiper {
+    padding-bottom: var(--space-3xl);
+}
+
+.gallery-slide-item {
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: var(--color-gray-100);
+}
+
+.gallery-slide-item img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    display: block;
+}
+
+.gallery-slide-item .gallery-placeholder {
+    width: 100%;
+    aspect-ratio: 4/3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-gray-200);
+    color: var(--color-gray-500);
+    border-radius: 8px;
+}
+
+.gallery-slide-item .gallery-placeholder span {
+    font-size: 1rem;
+    font-weight: var(--font-weight-medium);
+    margin-bottom: var(--space-xs);
+}
+
+.gallery-slide-item .gallery-placeholder p {
+    font-size: 0.875rem;
+}
+
+/* Swiper Navigation */
+.gallery-swiper .swiper-button-next,
+.gallery-swiper .swiper-button-prev {
+    width: 44px;
+    height: 44px;
+    background-color: var(--color-white);
+    border-radius: 50%;
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-base);
+}
+
+.gallery-swiper .swiper-button-next:after,
+.gallery-swiper .swiper-button-prev:after {
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--color-dark);
+}
+
+.gallery-swiper .swiper-button-next:hover,
+.gallery-swiper .swiper-button-prev:hover {
+    background-color: var(--color-accent);
+}
+
+.gallery-swiper .swiper-button-next:hover:after,
+.gallery-swiper .swiper-button-prev:hover:after {
+    color: var(--color-white);
+}
+
+/* 모바일에서 네비게이션 버튼 숨김 */
+@media (max-width: 768px) {
+    .gallery-swiper .swiper-button-next,
+    .gallery-swiper .swiper-button-prev {
+        display: none;
+    }
+}
+
+/* Swiper Pagination */
+.gallery-swiper .swiper-pagination {
+    bottom: 0;
+}
+
+.gallery-swiper .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background-color: var(--color-gray-300);
+    opacity: 1;
+    transition: all var(--transition-base);
+}
+
+.gallery-swiper .swiper-pagination-bullet-active {
+    background-color: var(--color-accent);
+    width: 28px;
+    border-radius: 5px;
+}
+
+/* ===================================
+   Info Card (Location 페이지용)
+   =================================== */
+
+.info-card {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-lg);
+    background-color: var(--color-gray-100);
+    border-radius: 4px;
+}
+
+.info-icon {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-white);
+    border-radius: 50%;
+    color: var(--color-accent);
+}
+
+.info-icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+.info-content {
+    flex: 1;
+}
+
+.info-label {
+    font-family: 'Pretendard', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--color-gray-600);
+    margin-bottom: 4px;
+}
+
+.info-value {
+    font-family: 'Pretendard', sans-serif;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--color-dark);
+    line-height: 1.4;
+}
+
+.info-tel {
+    color: var(--color-accent);
+    font-weight: 700;
+}
+
+/* ===================================
+   모바일 반응형 (Mobile First)
+   576px 이하: 모바일
+   577px ~ 767px: 소형 태블릿
+   768px ~ 1023px: 태블릿
+   1024px 이상: PC
+   =================================== */
+
+/* ----- 모바일 (576px 이하) ----- */
+@media (max-width: 576px) {
+    /* 기본 컨테이너 */
+    :root {
+        --container-padding: 1rem;
+    }
+    
+    .section {
+        padding: var(--space-3xl) 0;
+    }
+    
+    .section-header {
+        margin-bottom: var(--space-2xl);
+    }
+    
+    .section-label {
+        font-size: 0.6875rem;
+        letter-spacing: 0.1em;
+        margin-bottom: var(--space-sm);
+    }
+    
+    .section-title {
+        font-size: 1.375rem;
+        margin-bottom: var(--space-sm);
+    }
+    
+    .section-subtitle {
+        font-size: 0.8125rem;
+        line-height: 1.6;
+    }
+    
+    /* Page Hero */
+    .page-hero {
+        min-height: 220px;
+        max-height: 280px;
+    }
+    
+    .page-hero-label {
+        font-size: 0.6875rem;
+        letter-spacing: 0.1em;
+    }
+    
+    .page-hero-title {
+        font-size: 1.75rem;
+        margin-bottom: var(--space-sm);
+    }
+    
+    .page-hero-desc {
+        font-size: 0.875rem;
+    }
+    
+    .page-hero-badge {
+        font-size: 0.625rem;
+        padding: 2px 8px;
+    }
+    
+    /* 헤더 */
+    .logo-text {
+        font-size: 1rem;
+    }
+    
+    .logo-sub {
+        font-size: 0.5625rem;
+    }
+    
+    .header-tel {
+        display: none;
+    }
+    
+    /* 바로가기 카드 - 4개 한 줄 */
+    .quick-links-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--space-xs);
+    }
+    
+    .quick-link-card {
+        padding: var(--space-md) var(--space-sm);
+    }
+    
+    .quick-link-card .card-icon {
+        width: 32px;
+        height: 32px;
+        margin-bottom: var(--space-xs);
+    }
+    
+    .quick-link-card .card-icon svg {
+        width: 16px;
+        height: 16px;
+    }
+    
+    .quick-link-card h3 {
+        font-size: 0.6875rem;
+    }
+    
+    .quick-link-card p,
+    .quick-link-card .card-arrow {
+        display: none;
+    }
+    
+    /* 입지 인프라 카드 - 4개 한 줄 */
+    .infra-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--space-xs);
+    }
+    
+    .infra-card {
+        padding: var(--space-md) var(--space-sm);
+    }
+    
+    .infra-card .infra-icon {
+        width: 32px;
+        height: 32px;
+        margin-bottom: var(--space-xs);
+    }
+    
+    .infra-card .infra-icon svg {
+        width: 16px;
+        height: 16px;
+    }
+    
+    .infra-card h3 {
+        font-size: 0.6875rem;
+    }
+    
+    .infra-card ul {
+        display: none;
+    }
+    
+    /* 교통 안내 카드 - 4개 한 줄 */
+    .transport-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--space-xs);
+    }
+    
+    .transport-card {
+        padding: var(--space-md) var(--space-sm);
+    }
+    
+    .transport-card .transport-icon {
+        width: 32px;
+        height: 32px;
+        margin-bottom: var(--space-xs);
+    }
+    
+    .transport-card h3 {
+        font-size: 0.6875rem;
+    }
+    
+    .transport-card p {
+        display: none;
+    }
+    
+    /* CTA 섹션 */
+    .cta {
+        padding: var(--space-3xl) 0;
+    }
+    
+    .cta-title {
+        font-size: 1.25rem;
+        margin-bottom: var(--space-sm);
+    }
+    
+    .cta-subtitle {
+        font-size: 0.875rem;
+        margin-bottom: var(--space-lg);
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        gap: var(--space-sm);
+    }
+    
+    .cta-buttons .btn {
+        width: 100%;
+        padding: var(--space-md) var(--space-lg);
+        font-size: 0.875rem;
+    }
+    
+    /* History 페이지 */
+    .greeting-box {
+        padding: var(--space-lg);
+    }
+    
+    .greeting-header {
+        margin-bottom: var(--space-lg);
+    }
+    
+    .greeting-label {
+        font-size: 0.6875rem;
+    }
+    
+    .greeting-title {
+        font-size: 1.25rem;
+    }
+    
+    .greeting-intro {
+        font-size: 1rem !important;
+        margin-bottom: var(--space-md) !important;
+    }
+    
+    .greeting-content p {
+        font-size: 0.875rem;
+        line-height: 1.7;
+        margin-bottom: var(--space-md);
+    }
+    
+    .history-filter {
+        gap: var(--space-xs);
+        margin-bottom: var(--space-lg);
+        flex-wrap: wrap;
+    }
+    
+    .filter-btn {
+        padding: var(--space-xs) var(--space-sm);
+        font-size: 0.75rem;
+    }
+    
+    .history-list {
+        gap: var(--space-sm);
+    }
+    
+    .history-item {
+        padding: var(--space-sm) 0;
+        gap: var(--space-sm);
+    }
+    
+    .history-date {
+        font-size: 0.75rem;
+        min-width: 55px;
+    }
+    
+    .history-name {
+        font-size: 0.8125rem;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-sm);
+    }
+    
+    .company-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+    }
+    
+    .company-card {
+        padding: var(--space-lg);
+    }
+    
+    .company-icon {
+        width: 36px;
+        height: 36px;
+        margin-bottom: var(--space-md);
+    }
+    
+    .company-title {
+        font-size: 0.9375rem;
+    }
+    
+    .company-desc {
+        font-size: 0.8125rem;
+    }
+    
+    /* Land 페이지 */
+    .location-benefits-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+    }
+    
+    .location-benefit-card {
+        padding: var(--space-lg);
+    }
+    
+    .benefit-icon {
+        font-size: 2rem;
+    }
+    
+    .land-info-table th,
+    .land-info-table td {
+        display: block;
+        width: 100%;
+        padding: var(--space-sm);
+    }
+    
+    .land-info-table th {
+        background-color: var(--color-gray-200);
+        font-weight: var(--font-weight-bold);
+        border-bottom: none;
+    }
+    
+    .land-info-table td {
+        border-bottom: 1px solid var(--color-gray-300);
+        padding-top: var(--space-xs);
+    }
+    
+    .land-info-table tr {
+        border-bottom: none;
+    }
+    
+    .land-highlights-card {
+        padding: var(--space-lg);
+    }
+    
+    .land-highlight-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-sm);
+    }
+    
+    .highlight-number {
+        width: 28px;
+        height: 28px;
+        font-size: 0.6875rem;
+    }
+    
+    .land-cta-box {
+        padding: var(--space-xl);
+    }
+    
+    .land-cta-title {
+        font-size: 1.375rem;
+    }
+    
+    .land-cta-contact {
+        gap: var(--space-md);
+    }
+    
+    .contact-number {
+        font-size: 1.25rem;
+    }
+    
+    /* News 페이지 */
+    .news-overview-content {
+        gap: var(--space-xl);
+    }
+    
+    .overview-lead {
+        font-size: 1rem;
+        margin-bottom: var(--space-md);
+    }
+    
+    .overview-text p {
+        font-size: 0.875rem;
+        line-height: 1.7;
+        margin-bottom: var(--space-md);
+    }
+    
+    .overview-stats {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--space-sm);
+    }
+    
+    .stat-item {
+        padding: var(--space-md);
+    }
+    
+    .stat-number {
+        font-size: 1rem;
+    }
+    
+    .stat-label {
+        font-size: 0.625rem;
+    }
+    
+    .infra-content {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+    }
+    
+    .infra-category {
+        padding: var(--space-lg);
+    }
+    
+    .infra-category-title {
+        font-size: 1rem;
+        margin-bottom: var(--space-md);
+        padding-bottom: var(--space-sm);
+    }
+    
+    .category-icon {
+        font-size: 1rem;
+    }
+    
+    .infra-item {
+        padding: var(--space-xs) 0;
+    }
+    
+    .infra-name {
+        font-size: 0.8125rem;
+    }
+    
+    .infra-info {
+        font-size: 0.75rem;
+    }
+    
+    .development-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+    }
+    
+    .development-card {
+        padding: var(--space-lg);
+    }
+    
+    .development-main {
+        grid-column: span 1;
+    }
+    
+    .development-badge {
+        font-size: 0.625rem;
+        padding: 2px 6px;
+        margin-bottom: var(--space-sm);
+    }
+    
+    .development-title {
+        font-size: 1rem;
+        margin-bottom: var(--space-sm);
+    }
+    
+    .development-main .development-title {
+        font-size: 1.125rem;
+    }
+    
+    .development-desc {
+        font-size: 0.8125rem;
+        line-height: 1.6;
+        margin-bottom: var(--space-sm);
+    }
+    
+    .development-date {
+        font-size: 0.75rem;
+    }
+    
+    .value-box {
+        padding: var(--space-xl);
+    }
+    
+    .value-title {
+        font-size: 1.25rem;
+        margin-bottom: var(--space-xl);
+    }
+    
+    .value-points {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+    }
+    
+    .value-point {
+        gap: var(--space-md);
+    }
+    
+    .value-number {
+        width: 32px;
+        height: 32px;
+        font-size: 0.75rem;
+    }
+    
+    .value-text h3 {
+        font-size: 0.9375rem;
+        margin-bottom: var(--space-xs);
+    }
+    
+    .value-text p {
+        font-size: 0.8125rem;
+        line-height: 1.5;
+    }
+    
+    /* Location 페이지 */
+    .location-content {
+        grid-template-columns: 1fr;
+        gap: var(--space-xl);
+    }
+    
+    .map-container {
+        height: 300px;
+    }
+    
+    .location-info {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-sm);
+    }
+    
+    .info-card {
+        padding: var(--space-md) var(--space-lg);
+        gap: var(--space-md);
+    }
+    
+    .info-icon {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .info-icon svg {
+        width: 16px;
+        height: 16px;
+    }
+    
+    .info-label {
+        font-size: 0.6875rem;
+        margin-bottom: 2px;
+    }
+    
+    .info-value {
+        font-size: 0.8125rem;
+    }
+    
+    .directions-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+    }
+    
+    .direction-card {
+        padding: var(--space-lg);
+    }
+    
+    .direction-icon {
+        width: 40px;
+        height: 40px;
+        margin-bottom: var(--space-md);
+    }
+    
+    .direction-title {
+        font-size: 1rem;
+        margin-bottom: var(--space-md);
+    }
+    
+    .direction-content {
+        gap: var(--space-md);
+    }
+    
+    .direction-item {
+        padding-bottom: var(--space-sm);
+    }
+    
+    .direction-label {
+        font-size: 0.8125rem;
+        margin-bottom: 2px;
+    }
+    
+    .direction-item p {
+        font-size: 0.8125rem;
+        line-height: 1.5;
+    }
+    
+    .business-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+    }
+    
+    .business-card {
+        padding: var(--space-lg);
+        gap: var(--space-md);
+    }
+    
+    .business-icon {
+        width: 36px;
+        height: 36px;
+    }
+    
+    .business-name {
+        font-size: 0.9375rem;
+    }
+    
+    .business-info {
+        font-size: 0.8125rem;
+    }
+    
+    .contact-cta-box {
+        padding: var(--space-xl);
+    }
+    
+    .contact-cta-title {
+        font-size: 1.25rem;
+        margin-bottom: var(--space-sm);
+    }
+    
+    .contact-cta-desc {
+        font-size: 0.875rem;
+        margin-bottom: var(--space-lg);
+    }
+    
+    .phone-link {
+        padding: var(--space-md) var(--space-lg);
+        gap: var(--space-sm);
+    }
+    
+    .phone-link svg {
+        width: 24px;
+        height: 24px;
+    }
+    
+    .phone-number {
+        font-size: 1.25rem;
+    }
+    
+    .contact-cta-buttons {
+        gap: var(--space-sm);
+    }
+    
+    .contact-cta-buttons .btn {
+        padding: var(--space-md) var(--space-lg);
+        font-size: 0.875rem;
+    }
+    
+    /* 푸터 - 모바일용 간소화 */
+    .footer-desktop {
+        display: none;
+    }
+    
+    .footer-mobile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--space-md);
+        padding: var(--space-xl) var(--container-padding);
+        text-align: center;
+    }
+    
+    .footer-mobile-brand {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2px;
+    }
+    
+    .footer-mobile-logo {
+        font-family: var(--font-heading);
+        font-size: 1.125rem;
+        font-weight: 700;
+        color: var(--color-white);
+    }
+    
+    .footer-mobile-sub {
+        font-family: var(--font-heading);
+        font-size: 0.625rem;
+        font-weight: 500;
+        color: var(--color-accent);
+        letter-spacing: 0.15em;
+    }
+    
+    .footer-mobile-tel {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--space-xs);
+        padding: var(--space-sm) var(--space-lg);
+        background-color: rgba(255,255,255,0.1);
+        border-radius: 100px;
+        color: var(--color-white);
+        font-size: 0.875rem;
+        font-weight: 500;
+        text-decoration: none;
+        transition: background-color var(--transition-fast);
+    }
+    
+    .footer-mobile-tel:hover {
+        background-color: rgba(255,255,255,0.15);
+    }
+    
+    .footer-mobile-tel svg {
+        color: var(--color-accent);
+    }
+    
+    .footer-mobile-copy {
+        font-size: 0.6875rem;
+        color: rgba(255,255,255,0.4);
+        margin-top: var(--space-xs);
+    }
+}
+
+/* ----- 태블릿 (768px 이하) ----- */
+@media (max-width: 768px) {
+    .section {
+        padding: var(--space-4xl) 0;
+    }
+    
+    .section-title {
+        font-size: 1.75rem;
+    }
+    
+    /* 모바일 터치 스크롤 힌트 */
+    .gallery-slider-wrapper::after {
+        content: '← 스와이프하여 더 보기 →';
+        display: block;
+        text-align: center;
+        font-size: 0.75rem;
+        color: var(--color-gray-500);
+        margin-top: var(--space-sm);
+    }
+    
+    /* 지도 컨테이너 */
+    .map-container {
+        height: 350px;
+    }
+}
+
+/* ----- PC (1024px 이상) - PC 스타일 보장 ----- */
+@media (min-width: 1024px) {
+    /* 네비게이션 */
+    .main-nav {
+        display: block !important;
+    }
+    
+    .mobile-menu-btn {
+        display: none !important;
+    }
+    
+    .mobile-nav {
+        display: none !important;
+    }
+    
+    /* 바로가기 카드 - 4개 한 줄 (PC 기본) */
+    .quick-links-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--space-lg);
+    }
+    
+    .quick-link-card {
+        padding: var(--space-2xl);
+    }
+    
+    .quick-link-card .card-icon {
+        width: 56px;
+        height: 56px;
+        margin-bottom: var(--space-lg);
+    }
+    
+    .quick-link-card h3 {
+        font-size: 1.125rem;
+    }
+    
+    .quick-link-card p {
+        display: block;
+        font-size: 0.875rem;
+    }
+    
+    .quick-link-card .card-arrow {
+        display: flex;
+    }
+    
+    /* 입지 인프라 카드 - 4개 한 줄 (PC 기본) */
+    .infra-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--space-lg);
+    }
+    
+    .infra-card {
+        padding: var(--space-2xl);
+    }
+    
+    .infra-card .infra-icon {
+        width: 56px;
+        height: 56px;
+        margin-bottom: var(--space-lg);
+    }
+    
+    .infra-card h3 {
+        font-size: 1.125rem;
+    }
+    
+    .infra-card ul {
+        display: block;
+    }
+    
+    /* 교통 안내 카드 - 4개 한 줄 (PC 기본) */
+    .transport-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--space-lg);
+    }
+    
+    .transport-card {
+        padding: var(--space-2xl);
+    }
+    
+    .transport-card .transport-icon {
+        width: 56px;
+        height: 56px;
+        margin-bottom: var(--space-lg);
+    }
+    
+    .transport-card h3 {
+        font-size: 1.125rem;
+    }
+    
+    .transport-card p {
+        display: block;
+    }
+    
+    /* 푸터 - PC용 전체 표시 */
+    .footer-mobile {
+        display: none;
+    }
+    
+    .footer-desktop {
+        display: block;
+    }
+    
+    .footer-top {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .footer-links {
+        display: flex;
+        gap: var(--space-3xl);
+    }
+    
+    .footer-col {
+        text-align: left;
+    }
+    
+    .footer-bottom {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .footer-info {
+        display: block;
+    }
+    
+    /* 지도 컨테이너 */
+    .map-container {
+        height: 500px;
+    }
+    
+    /* Location 페이지 */
+    .location-content {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .directions-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .business-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    /* News 페이지 */
+    .infra-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .development-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .development-main {
+        grid-column: span 2;
+    }
+    
+    .value-points {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    /* History 페이지 */
+    .company-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    /* Land 페이지 */
+    .location-benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
