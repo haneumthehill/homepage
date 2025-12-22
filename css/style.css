@@ -32,10 +32,11 @@
     --color-dark: #1a1a1a;
     --color-gray-900: #2a2a2a;
     --color-gray-800: #3a3a3a;
-    --color-gray-700: #555555;
-    --color-gray-600: #777777;
-    --color-gray-500: #999999;
-    --color-gray-400: #bbbbbb;
+    /* 가독성 개선: 본문/보조 텍스트를 한 톤 더 어둡게 */
+    --color-gray-700: #333333;
+    --color-gray-600: #444444;
+    --color-gray-500: #666666;
+    --color-gray-400: #888888;
     --color-gray-300: #dddddd;
     --color-gray-200: #eeeeee;
     --color-gray-100: #f5f5f5;
@@ -53,7 +54,7 @@
     --font-primary: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     --font-heading: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     --font-weight-light: 300;
-    --font-weight-regular: 300;
+    --font-weight-regular: 400;
     --font-weight-medium: 500;
     --font-weight-semibold: 500;
     --font-weight-bold: 700;
@@ -115,9 +116,9 @@ html {
 body {
     font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     font-size: 15px;
-    font-weight: 300;
+    font-weight: var(--font-weight-medium);
     line-height: 1.6;
-    color: #333;
+    color: var(--color-dark);
     background-color: var(--color-white);
     overflow-x: hidden;
 }
@@ -1730,7 +1731,7 @@ button {
 .footer-logo .logo-sub {
     font-family: 'Pretendard', sans-serif;
     font-size: 0.5rem;
-    font-weight: 300;
+    font-weight: var(--font-weight-regular);
     color: var(--color-gray-500);
     letter-spacing: 0.1em;
 }
@@ -3423,7 +3424,7 @@ button {
 .footer-logo-en {
     font-family: 'Pretendard', sans-serif;
     font-size: 0.5rem;
-    font-weight: 300;
+    font-weight: var(--font-weight-regular);
     color: var(--color-gray-400);
     letter-spacing: 0.1em;
 }
