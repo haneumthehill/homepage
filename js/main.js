@@ -563,6 +563,89 @@
     }
 
     // ===================================
+    // Hero Slider (Home only) - 2.5초 간격 무한 슬라이드
+    // ===================================
+    class HeroSlider {
+        constructor() {
+            this.track = null;
+            this.slides = [];
+            this.slideCount = 0;
+            this.currentIndex = 0;
+            this.intervalMs = 2500; // 2.5초
+            this.timerId = null;
+            this.isTransitioning = false;
+        }
+
+        init() {
+            // Only run on home page
+            const currentPage = document.body.getAttribute('data-page');
+            if (currentPage !== 'home') return;
+
+            this.track = document.getElementById('heroSliderTrack');
+            if (!this.track) return;
+
+            this.slides = Array.from(this.track.querySelectorAll('.hero-slide'));
+            this.slideCount = this.slides.length;
+            if (this.slideCount <= 1) return;
+
+            // 첫 번째 슬라이드 클론을 맨 뒤에 추가 (무한 루프용)
+            const firstClone = this.slides[0].cloneNode(true);
+            firstClone.classList.add('clone');
+            this.track.appendChild(firstClone);
+
+            // transitionend 이벤트로 클론→첫 번째 점프 처리
+            this.track.addEventListener('transitionend', () => this.onTransitionEnd());
+
+            this.currentIndex = 0;
+            this.setPosition(0, false);
+            this.start();
+
+            // 탭 전환 시 타이머 제어
+            document.addEventListener('visibilitychange', () => {
+                if (document.hidden) {
+                    this.stop();
+                } else {
+                    this.start();
+                }
+            });
+        }
+
+        start() {
+            if (this.timerId) return;
+            this.timerId = setInterval(() => this.next(), this.intervalMs);
+        }
+
+        stop() {
+            if (this.timerId) {
+                clearInterval(this.timerId);
+                this.timerId = null;
+            }
+        }
+
+        next() {
+            if (this.isTransitioning) return;
+            this.isTransitioning = true;
+            this.currentIndex++;
+            this.setPosition(this.currentIndex, true);
+        }
+
+        onTransitionEnd() {
+            this.isTransitioning = false;
+            // 클론(마지막+1)에 도달하면 애니메이션 없이 첫 번째로 점프
+            if (this.currentIndex >= this.slideCount) {
+                this.currentIndex = 0;
+                this.setPosition(0, false);
+            }
+        }
+
+        setPosition(index, animate) {
+            if (!this.track) return;
+            this.track.style.transition = animate ? 'transform 0.8s ease-in-out' : 'none';
+            this.track.style.transform = `translateX(-${index * 100}%)`;
+        }
+    }
+
+    // ===================================
     // Initialize Application
     // ===================================
     class App {
@@ -575,6 +658,7 @@
             this.scrollAnimations = new ScrollAnimations();
             this.historyLoader = new HistoryLoader();
             this.scrollToTop = new ScrollToTop();
+            this.heroSlider = new HeroSlider();
         }
 
         async init() {
@@ -603,6 +687,7 @@
             this.lazyLoader.init();
             this.scrollAnimations.init();
             this.historyLoader.init();
+            this.heroSlider.init();
 
             setTimeout(() => {
                 this.lazyLoader.observeImages();
