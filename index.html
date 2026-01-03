@@ -74,7 +74,7 @@
         .promo-modal {
             position: relative;
             width: min(520px, 44vw);
-            border-radius: 16px;
+            border-radius: 0;
             padding: 20px;
             background: #fff;
             box-shadow: 0 24px 80px rgba(0, 0, 0, 0.22);
@@ -517,9 +517,6 @@
                 overlay.setAttribute('aria-hidden', 'false');
                 lockScroll(true);
                 lastFocusedEl = document.activeElement;
-
-                const focusTarget = overlay.querySelector('[data-promo-close]');
-                if (focusTarget && focusTarget.focus) focusTarget.focus();
             }
 
             function closeOverlay() {
